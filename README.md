@@ -42,7 +42,7 @@ Your copy stinks. Here is what Unclint catches:
 ## Install
 
 ```sh
-brew tap iMerica/unclint
+brew tap iMerica/unclint https://github.com/iMerica/unclint
 brew install unc
 ```
 
