@@ -3,8 +3,8 @@ package engine
 import (
 	"strings"
 
-	"github.com/yourname/unc/internal/config"
-	"github.com/yourname/unc/internal/nlp"
+	"github.com/iMerica/unclint/internal/config"
+	"github.com/iMerica/unclint/internal/nlp"
 )
 
 type RuleMatcher interface {

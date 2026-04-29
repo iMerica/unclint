@@ -1,6 +1,6 @@
 package main
 
-import "github.com/yourname/unc/internal/cli"
+import "github.com/iMerica/unclint/internal/cli"
 
 var version = "dev"
 

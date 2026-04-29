@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/yourname/unc/internal/rules"
+	"github.com/iMerica/unclint/internal/rules"
 )
 
 var rulesCmd = &cobra.Command{

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/yourname/unc/internal/engine"
+	"github.com/iMerica/unclint/internal/engine"
 )
 
 func PrintGitHub(w io.Writer, results []engine.Result) {

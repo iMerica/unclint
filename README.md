@@ -2,7 +2,7 @@
 
 ![Unc](unc.png)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/yourname/unc)](https://goreportcard.com/report/github.com/yourname/unc) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Go Report Card](https://goreportcard.com/badge/github.com/iMerica/unclint)](https://goreportcard.com/report/github.com/iMerica/unclint) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Tired of being a chopped Unc? 
 
@@ -114,7 +114,7 @@ This whole document is a corporate wasteland and I accept that.
 ## Build it yourself
 
 ```sh
-git clone https://github.com/iMerica/unc.git
+git clone https://github.com/iMerica/unclint.git
 cd unc
 make build
 ./bin/unc --help

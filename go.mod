@@ -1,4 +1,4 @@
-module github.com/yourname/unc
+module github.com/iMerica/unclint
 
 go 1.26.1
 

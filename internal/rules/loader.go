@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	rulespack "github.com/yourname/unc/rules"
+	rulespack "github.com/iMerica/unclint/rules"
 	"gopkg.in/yaml.v3"
 )
 

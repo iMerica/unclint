@@ -5,7 +5,7 @@ import (
 	"io"
 
 	"github.com/charmbracelet/lipgloss"
-	"github.com/yourname/unc/internal/engine"
+	"github.com/iMerica/unclint/internal/engine"
 )
 
 var (

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/yourname/unc/internal/engine"
+	"github.com/iMerica/unclint/internal/engine"
 )
 
 type JSONOutput struct {

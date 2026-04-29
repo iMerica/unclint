@@ -1,6 +1,6 @@
 package engine
 
-import "github.com/yourname/unc/internal/config"
+import "github.com/iMerica/unclint/internal/config"
 
 func Score(findings []Finding) int {
 	score := 0

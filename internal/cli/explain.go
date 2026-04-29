@@ -4,10 +4,10 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/yourname/unc/internal/config"
-	"github.com/yourname/unc/internal/engine"
-	"github.com/yourname/unc/internal/output"
-	"github.com/yourname/unc/internal/rules"
+	"github.com/iMerica/unclint/internal/config"
+	"github.com/iMerica/unclint/internal/engine"
+	"github.com/iMerica/unclint/internal/output"
+	"github.com/iMerica/unclint/internal/rules"
 )
 
 var explainCmd = &cobra.Command{

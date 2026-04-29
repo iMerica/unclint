@@ -3,8 +3,8 @@ package rules
 import (
 	"strings"
 
-	"github.com/yourname/unc/internal/engine"
-	"github.com/yourname/unc/internal/nlp"
+	"github.com/iMerica/unclint/internal/engine"
+	"github.com/iMerica/unclint/internal/nlp"
 )
 
 type LemmaPOSMatcher struct {
