@@ -1,14 +1,25 @@
+<div align="center">
+
 # Unclint
 
 ![Unc](unc.png)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/iMerica/unclint)](https://goreportcard.com/report/github.com/iMerica/unclint) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+**Tired of being a chopped Unc?**
 
-Tired of being a chopped Unc? 
+<p align="center">
+<a href="https://github.com/iMerica/unclint/actions/workflows/ci.yml"><img src="https://github.com/iMerica/unclint/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="https://github.com/iMerica/unclint/releases"><img src="https://img.shields.io/github/v/release/iMerica/unclint?color=0f7b3f" alt="Release"></a>
+<a href="https://goreportcard.com/report/github.com/iMerica/unclint"><img src="https://goreportcard.com/badge/github.com/iMerica/unclint" alt="Go Report Card"></a>
+<a href="https://pkg.go.dev/github.com/iMerica/unclint"><img src="https://img.shields.io/badge/Go-1.22%2B-00ADD8?logo=go&logoColor=white" alt="Go"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
+<a href="#"><img src="https://img.shields.io/badge/unc-certified%20chop%20free-brightgreen" alt="Unc Certified"></a>
+</p>
 
-Listen. You're sitting at your desk. You're trying to write a simple sentence, and suddenly you type "driving alignment on high leverage synergies". You're a sick guy. You need help.
+Listen. You're sitting at your desk. You're trying to write a simple sentence, and suddenly you type "driving alignment on high leverage synergies".
 
-Or worse, you're a product manager trying to use "rizz" in a slide deck. It's tough to watch. 
+Or worse, you're a product manager trying to use "rizz" in a slide deck. It's tough to watch.
+
+</div> 
 
 Unclint is a Go CLI that catches your bad copy before anyone else sees it. It flags corporate jargon, stale millennial slang, boomer framing, and fake youth garbage. It keeps you honest.
 
@@ -30,10 +41,8 @@ Your copy stinks. Here is what Unclint catches:
 
 ## Install
 
-Get it via Homebrew.
-
 ```sh
-brew tap iMerica/homebrew-tap
+brew tap iMerica/unclint
 brew install unc
 ```
 
