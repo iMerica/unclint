@@ -15,11 +15,11 @@
 <a href="#"><img src="https://img.shields.io/badge/unc-certified%20chop%20free-brightgreen" alt="Unc Certified"></a>
 </p>
 
+</div>
+
 Listen. You're sitting at your desk. You're trying to write a simple sentence, and suddenly you type "driving alignment on high leverage synergies".
 
 Or worse, you're a product manager trying to use "rizz" in a slide deck. It's tough to watch.
-
-</div> 
 
 Unclint is a Go CLI that catches your bad copy before anyone else sees it. It flags corporate jargon, stale millennial slang, boomer framing, and fake youth garbage. It keeps you honest.
 
