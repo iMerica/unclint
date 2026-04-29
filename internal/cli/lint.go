@@ -5,12 +5,12 @@ import (
 	"io"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/iMerica/unclint/internal/config"
 	"github.com/iMerica/unclint/internal/engine"
 	"github.com/iMerica/unclint/internal/files"
 	"github.com/iMerica/unclint/internal/output"
 	"github.com/iMerica/unclint/internal/rules"
+	"github.com/spf13/cobra"
 )
 
 var (

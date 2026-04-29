@@ -3,8 +3,8 @@ package cli
 import (
 	"fmt"
 
-	"github.com/spf13/cobra"
 	"github.com/iMerica/unclint/internal/rules"
+	"github.com/spf13/cobra"
 )
 
 var rulesCmd = &cobra.Command{
