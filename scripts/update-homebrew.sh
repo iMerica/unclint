@@ -2,22 +2,17 @@
 set -euo pipefail
 
 : "${VERSION:?VERSION is required}"
-: "${TAP_REPO:?TAP_REPO is required}"
-: "${TAP_TOKEN:?TAP_TOKEN is required}"
 
 OWNER_REPO="${GITHUB_REPOSITORY}"
-WORKDIR="$(mktemp -d)"
-
-git clone "https://x-access-token:${TAP_TOKEN}@github.com/${TAP_REPO}.git" "${WORKDIR}/tap"
 
 DARWIN_ARM64_SHA="$(grep "darwin_arm64.tar.gz" dist/SHA256SUMS.txt | awk '{print $1}')"
 DARWIN_AMD64_SHA="$(grep "darwin_amd64.tar.gz" dist/SHA256SUMS.txt | awk '{print $1}')"
 LINUX_AMD64_SHA="$(grep "linux_amd64.tar.gz" dist/SHA256SUMS.txt | awk '{print $1}')"
 LINUX_ARM64_SHA="$(grep "linux_arm64.tar.gz" dist/SHA256SUMS.txt | awk '{print $1}')"
 
-mkdir -p "${WORKDIR}/tap/Formula"
+mkdir -p Formula
 
-cat > "${WORKDIR}/tap/Formula/unc.rb" <<EOF2
+cat > Formula/unc.rb <<EOF2
 class Unc < Formula
   desc "CLI linter for unc, corporate, stale, and tryhard language"
   homepage "https://github.com/${OWNER_REPO}"
@@ -54,9 +49,8 @@ class Unc < Formula
 end
 EOF2
 
-cd "${WORKDIR}/tap"
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
 git add Formula/unc.rb
-git commit -m "Update unc to ${VERSION}" || exit 0
-git push origin master
+git commit -m "Update unc formula to ${VERSION} [skip ci]" || exit 0
+git push origin HEAD:master
