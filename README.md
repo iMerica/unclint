@@ -116,6 +116,12 @@ This whole document is a corporate wasteland and I accept that.
 ```sh
 git clone https://github.com/iMerica/unc.git
 cd unc
-scripts/build.sh
+make build
 ./bin/unc --help
+```
+
+To run the tests with beautiful formatted output:
+
+```sh
+make test
 ```

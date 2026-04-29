@@ -1,0 +1,6 @@
+bin/
+dist/
+*.out
+*.exe
+.uncrc.yml
+.DS_Store

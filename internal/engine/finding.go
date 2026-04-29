@@ -1,6 +1,7 @@
 package engine
 
 type Finding struct {
+	StartByte  int      `json:"-"`
 	File       string   `json:"file,omitempty"`
 	Line       int      `json:"line"`
 	Column     int      `json:"column"`

@@ -28,6 +28,7 @@ func BuildMatchers(rules []Rule) []engine.RuleMatcher {
 
 func makeFinding(r Rule, sentence nlp.AnalyzedSentence) engine.Finding {
 	return engine.Finding{
+		StartByte:  sentence.StartByte,
 		RuleID:     r.ID,
 		Category:   r.Category,
 		Severity:   r.Severity,

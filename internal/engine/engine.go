@@ -38,6 +38,8 @@ func (e *Engine) LintText(path string, text string, deep bool) (Result, error) {
 		return Result{}, err
 	}
 
+	suppressions := parseSuppressions(text)
+
 	var findings []Finding
 
 	for _, s := range sentences {
@@ -45,6 +47,13 @@ func (e *Engine) LintText(path string, text string, deep bool) (Result, error) {
 			f := m.Match(s)
 			findings = append(findings, f...)
 		}
+	}
+
+	for i := range findings {
+		line, col := byteToLineCol(text, findings[i].StartByte)
+		findings[i].File = path
+		findings[i].Line = line
+		findings[i].Column = col
 	}
 
 	// Filter findings based on config rules enabled/disabled
@@ -81,16 +90,11 @@ func (e *Engine) LintText(path string, text string, deep bool) (Result, error) {
 			continue
 		}
 
+		if isSuppressed(f, suppressions) {
+			continue
+		}
+
 		filtered = append(filtered, f)
-	}
-
-	// Filter by inline suppressions here (Phase 8 logic can be added later)
-
-	// Update finding file/line info
-	for i := range filtered {
-		filtered[i].File = path
-		filtered[i].Line = 1 // basic for MVP, needs byte-to-line mapping
-		filtered[i].Column = 1
 	}
 
 	score := Score(filtered)
@@ -102,4 +106,89 @@ func (e *Engine) LintText(path string, text string, deep bool) (Result, error) {
 		Pass:     pass,
 		Findings: filtered,
 	}, nil
+}
+
+type Suppression struct {
+	Type    string
+	Line    int
+	Targets []string
+}
+
+func parseSuppressions(text string) []Suppression {
+	var suppressions []Suppression
+	lines := strings.Split(text, "\n")
+	for i, line := range lines {
+		lineNum := i + 1
+		idx := strings.Index(line, "unc-disable")
+		if idx == -1 {
+			continue
+		}
+
+		rem := line[idx:]
+		parts := strings.Fields(rem)
+		if len(parts) == 0 {
+			continue
+		}
+
+		directive := parts[0]
+		var targets []string
+		for _, p := range parts[1:] {
+			if strings.HasPrefix(p, "--") {
+				break
+			}
+			targets = append(targets, p)
+		}
+
+		if directive == "unc-disable" {
+			suppressions = append(suppressions, Suppression{Type: "file", Line: lineNum, Targets: targets})
+		} else if directive == "unc-disable-next-line" {
+			suppressions = append(suppressions, Suppression{Type: "next-line", Line: lineNum, Targets: targets})
+		} else if directive == "unc-disable-line" {
+			suppressions = append(suppressions, Suppression{Type: "line", Line: lineNum, Targets: targets})
+		}
+	}
+	return suppressions
+}
+
+func byteToLineCol(text string, startByte int) (int, int) {
+	line := 1
+	col := 1
+	for i := 0; i < startByte && i < len(text); i++ {
+		if text[i] == '\n' {
+			line++
+			col = 1
+		} else {
+			col++
+		}
+	}
+	return line, col
+}
+
+func isSuppressed(f Finding, suppressions []Suppression) bool {
+	for _, s := range suppressions {
+		match := len(s.Targets) == 0
+		if !match {
+			for _, t := range s.Targets {
+				if t == f.RuleID || t == f.Category {
+					match = true
+					break
+				}
+			}
+		}
+
+		if !match {
+			continue
+		}
+
+		if s.Type == "file" {
+			return true
+		}
+		if s.Type == "line" && s.Line == f.Line {
+			return true
+		}
+		if s.Type == "next-line" && s.Line+1 == f.Line {
+			return true
+		}
+	}
+	return false
 }

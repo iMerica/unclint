@@ -34,17 +34,25 @@ func Analyze(text string, deep bool, triggers map[string]struct{}) ([]AnalyzedSe
 	sentences := tokenizer.Tokenize(text)
 	var analyzed []AnalyzedSentence
 
+	offset := 0
 	for _, s := range sentences {
 		sentenceText := strings.TrimSpace(s.Text)
 		if sentenceText == "" {
 			continue
 		}
 
+		idx := strings.Index(text[offset:], sentenceText)
+		startByte := offset
+		if idx != -1 {
+			startByte = offset + idx
+		}
+
 		as := AnalyzedSentence{
 			Text:      sentenceText,
-			StartByte: 0,
-			EndByte:   len(sentenceText),
+			StartByte: startByte,
+			EndByte:   startByte + len(sentenceText),
 		}
+		offset = startByte + len(sentenceText)
 
 		suspicious := IsSuspicious(sentenceText, triggers)
 		if deep || suspicious {

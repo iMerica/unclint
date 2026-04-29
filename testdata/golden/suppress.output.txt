@@ -1,0 +1,31 @@
+[38;5;240msuppress.input.txt[0m:1:1  [38;5;63mcorporate/verb-leverage[0m  [1;38;5;196mwarning[0m  weight 4
+"[3mWe leverage creator rizz to unlock authentic engagement.[0m"
+
+Problem:
+'leverage' as a verb reads corporate.
+
+Suggestion:
+[38;5;42mUse 'use'.[0m
+
+[38;5;240msuppress.input.txt[0m:1:1  [38;5;63mcorporate/construction-unlock-abstract[0m  [1;38;5;196mwarning[0m  weight 5
+"[3mWe leverage creator rizz to unlock authentic engagement.[0m"
+
+Problem:
+This uses a vague 'unlock + abstract noun' construction.
+
+Suggestion:
+[38;5;42mSay what becomes possible.[0m
+
+[38;5;240msuppress.input.txt[0m:3:1  [38;5;63mcorporate/verb-leverage[0m  [1;38;5;196mwarning[0m  weight 4
+"[3m<!-- unc-disable-next-line corporate/verb-leverage -->[0m
+[3mWe leverage the new feature.[0m                          "
+
+Problem:
+'leverage' as a verb reads corporate.
+
+Suggestion:
+[38;5;42mUse 'use'.[0m
+
+Score: [1;38;5;220m13[0m
+Result: [1;38;5;196mFAIL[0m
+

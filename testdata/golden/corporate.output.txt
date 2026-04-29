@@ -1,0 +1,57 @@
+[38;5;240mcorporate.input.txt[0m:1:1  [38;5;63mcorporate/verb-leverage[0m  [1;38;5;196mwarning[0m  weight 4
+"[3mWe leverage creator rizz to unlock authentic engagement.[0m"
+
+Problem:
+'leverage' as a verb reads corporate.
+
+Suggestion:
+[38;5;42mUse 'use'.[0m
+
+[38;5;240mcorporate.input.txt[0m:1:1  [38;5;63mcorporate/construction-unlock-abstract[0m  [1;38;5;196mwarning[0m  weight 5
+"[3mWe leverage creator rizz to unlock authentic engagement.[0m"
+
+Problem:
+This uses a vague 'unlock + abstract noun' construction.
+
+Suggestion:
+[38;5;42mSay what becomes possible.[0m
+
+[38;5;240mcorporate.input.txt[0m:2:1  [38;5;63mcorporate/construction-drive-abstract[0m  [1;38;5;196mwarning[0m  weight 5
+"[3mWe need to drive alignment across stakeholders.[0m"
+
+Problem:
+This uses a vague 'drive + abstract noun' construction.
+
+Suggestion:
+[38;5;42mSay who is doing what and what changes.[0m
+
+[38;5;240mcorporate.input.txt[0m:3:1  [38;5;63mcorporate/phrase-circle-back[0m  [1;38;5;196mwarning[0m  weight 4
+"[3mLet's circle back on the low-hanging fruit to move the needle.[0m"
+
+Problem:
+'circle back' is corporate filler.
+
+Suggestion:
+[38;5;42mUse 'follow up'.[0m
+
+[38;5;240mcorporate.input.txt[0m:3:1  [38;5;63mcorporate/phrase-move-the-needle[0m  [1;38;5;196mwarning[0m  weight 5
+"[3mLet's circle back on the low-hanging fruit to move the needle.[0m"
+
+Problem:
+'move the needle' is vague business jargon.
+
+Suggestion:
+[38;5;42mName the metric that changes.[0m
+
+[38;5;240mcorporate.input.txt[0m:3:1  [38;5;63mcorporate/phrase-low-hanging-fruit[0m  [1;38;5;196mwarning[0m  weight 4
+"[3mLet's circle back on the low-hanging fruit to move the needle.[0m"
+
+Problem:
+'low-hanging fruit' is stale business phrasing.
+
+Suggestion:
+[38;5;42mSay the specific easy task.[0m
+
+Score: [1;38;5;220m27[0m
+Result: [1;38;5;196mFAIL[0m
+
