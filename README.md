@@ -124,7 +124,7 @@ This whole document is a corporate wasteland and I accept that.
 
 ```sh
 git clone https://github.com/iMerica/unclint.git
-cd unc
+cd unclint
 make build
 ./bin/unc --help
 ```
