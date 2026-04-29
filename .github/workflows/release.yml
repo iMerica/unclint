@@ -76,7 +76,7 @@ jobs:
       - name: Update Homebrew tap
         env:
           VERSION: ${{ steps.version.outputs.version }}
-          TAP_REPO: yourname/homebrew-tap
+          TAP_REPO: iMerica/homebrew-tap
           TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
         run: |
           ./scripts/update-homebrew.sh
