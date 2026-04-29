@@ -1,0 +1,103 @@
+rules:
+  - id: corporate/phrase-circle-back
+    kind: phrase
+    pattern: "circle back"
+    category: corporate
+    severity: 1
+    weight: 4
+    message: "'circle back' is corporate filler."
+    suggestion: "Use 'follow up'."
+
+  - id: corporate/phrase-touch-base
+    kind: phrase
+    pattern: "touch base"
+    category: corporate
+    severity: 1
+    weight: 4
+    message: "'touch base' is corporate filler."
+    suggestion: "Use 'talk' or 'follow up'."
+
+  - id: corporate/phrase-move-the-needle
+    kind: phrase
+    pattern: "move the needle"
+    category: corporate
+    severity: 1
+    weight: 5
+    message: "'move the needle' is vague business jargon."
+    suggestion: "Name the metric that changes."
+
+  - id: corporate/phrase-low-hanging-fruit
+    kind: phrase
+    pattern: "low-hanging fruit"
+    category: corporate
+    severity: 1
+    weight: 4
+    message: "'low-hanging fruit' is stale business phrasing."
+    suggestion: "Say the specific easy task."
+
+  - id: corporate/verb-leverage
+    kind: lemma_pos
+    lemma: "leverage"
+    pos: "VB"
+    category: corporate
+    severity: 1
+    weight: 4
+    message: "'leverage' as a verb reads corporate."
+    suggestion: "Use 'use'."
+
+  - id: corporate/verb-utilize
+    kind: lemma_pos
+    lemma: "utilize"
+    pos: "VB"
+    category: corporate
+    severity: 1
+    weight: 3
+    message: "'utilize' reads stiff."
+    suggestion: "Use 'use'."
+
+  - id: corporate/verb-operationalize
+    kind: lemma_pos
+    lemma: "operationalize"
+    pos: "VB"
+    category: corporate
+    severity: 1
+    weight: 5
+    message: "'operationalize' is heavy business jargon."
+    suggestion: "Use a concrete verb."
+
+  - id: corporate/verb-socialize
+    kind: lemma_pos
+    lemma: "socialize"
+    pos: "VB"
+    category: corporate
+    severity: 1
+    weight: 4
+    message: "'socialize' as a work verb reads corporate."
+    suggestion: "Use 'share', 'review', or 'discuss'."
+
+  - id: corporate/construction-drive-abstract
+    kind: construction
+    pattern: "drive_abstract_noun"
+    category: corporate
+    severity: 1
+    weight: 5
+    message: "This uses a vague 'drive + abstract noun' construction."
+    suggestion: "Say who is doing what and what changes."
+
+  - id: corporate/construction-unlock-abstract
+    kind: construction
+    pattern: "unlock_abstract_noun"
+    category: corporate
+    severity: 1
+    weight: 5
+    message: "This uses a vague 'unlock + abstract noun' construction."
+    suggestion: "Say what becomes possible."
+
+  - id: corporate/construction-noun-pile
+    kind: construction
+    pattern: "corporate_noun_pile"
+    category: corporate
+    severity: 1
+    weight: 6
+    message: "This sentence has a corporate noun pile."
+    suggestion: "Break it into concrete nouns and verbs."
